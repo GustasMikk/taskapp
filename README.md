@@ -56,5 +56,6 @@ user2:
 
 8. **Test registering endpoint:**
 ```
-php artisan test
+php artisan test --filter=RegisterUserTest
+
 ```

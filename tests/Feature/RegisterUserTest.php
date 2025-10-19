@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
+use PHPUnit\Framework\Attributes\Test;
 use Tests\TestCase;
 use App\Models\User;
 
@@ -11,7 +12,7 @@ class RegisterUserTest extends TestCase
 {
     use RefreshDatabase;
 
-    #@test
+    #[Test]
     public function user_can_register_successfully()
     {
         $data = [
@@ -29,11 +30,11 @@ class RegisterUserTest extends TestCase
                  ]);
 
         $this->assertDatabaseHas('users', [
-            'email' => 'test@example.com',
+            'email' => 'test@test.com',
         ]);
     }
 
-    #@test
+    #[Test]
     public function registration_fails_with_invalid_data()
     {
         $data = [
